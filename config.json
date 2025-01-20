@@ -1,0 +1,143 @@
+{
+  "version": 2,
+  "/chart": {
+    "intervals": ["5m", "15m", "1h", "4h", "1D", "1W"],
+    "default": {
+      "symbol": "CAPITALCOM:US100",
+      "interval": "1D",
+      "theme": "dark",
+      "height": 800,
+      "width": 1200,
+      "studies": [
+        {
+          "name": "Volume",
+          "forceOverlay": true,
+          "override": {
+            "Volume.color.0": "rgba(247,82,95,0.3)",
+            "Volume.color.1": "rgba(34,171,148,0.3)"
+          }
+        },
+        {
+          "name": "Supertrend",
+          "input": {
+            "Factor": 3,
+            "Period": 10
+          },
+          "override": {
+            "Up Trend.color": "rgb(8,153,129)",
+            "Down Trend.color": "rgb(242,54,69)"
+          }
+        },
+        {
+          "name": "Relative Strength Index",
+          "input": {
+            "length": 14
+          },
+          "override": {
+            "Plot.color": "rgb(33,150,243)",
+            "UpperLimit.value": 70,
+            "LowerLimit.value": 30
+          }
+        }
+      ]
+    }
+  },
+  "/crypto": {
+    "intervals": ["5m", "15m", "1h", "4h", "1D", "1W"],
+    "default": {
+      "symbol": "BINANCE:BTCUSDT",
+      "interval": "1D",
+      "theme": "dark",
+      "height": 800,
+      "width": 1200,
+      "studies": [
+        {
+          "name": "Volume",
+          "forceOverlay": true,
+          "override": {
+            "Volume.color.0": "rgba(247,82,95,0.3)",
+            "Volume.color.1": "rgba(34,171,148,0.3)"
+          }
+        }
+      ]
+    },
+    "inputs": [
+      [
+        {
+          "text": "BTCUSDT",
+          "symbol": "BINANCE:BTCUSDT",
+          "studies": [
+            {
+              "name": "Volume",
+              "forceOverlay": true,
+              "override": {
+                "Volume.color.0": "rgba(247,82,95,0.3)",
+                "Volume.color.1": "rgba(34,171,148,0.3)"
+              }
+            },
+            {
+              "name": "Relative Strength Index",
+              "input": {
+                "length": 14
+              },
+              "override": {
+                "Plot.color": "rgb(33,150,243)",
+                "UpperLimit.value": 70,
+                "LowerLimit.value": 30
+              }
+            },
+            {
+              "name": "Supertrend",
+              "input": {
+                "Factor": 3,
+                "Period": 10
+              },
+              "override": {
+                "Up Trend.color": "rgb(8,153,129)",
+                "Down Trend.color": "rgb(242,54,69)"
+              }
+            }
+          ]
+        }
+      ]
+    ]
+  },
+  "commands": [
+    {
+      "command": "/start",
+      "description": "Start the bot and see available commands"
+    },
+    {
+      "command": "/chart",
+      "description": "Get chart with custom symbol and interval"
+    },
+    {
+      "command": "/crypto",
+      "description": "View cryptocurrency charts"
+    },
+    {
+      "command": "/nasdaq",
+      "description": "View NASDAQ stock charts"
+    },
+    {
+      "command": "/nyse",
+      "description": "View NYSE stock charts"
+    },
+    {
+      "command": "/forex",
+      "description": "View forex pair charts"
+    },
+    {
+      "command": "/cfd",
+      "description": "View CFD charts"
+    },
+    {
+      "command": "/example",
+      "description": "See example commands"
+    }
+  ],
+  "messages": {
+    "start": "👋 Welcome to the Financial Market Analysis Bot!\n\nI can help you analyze various financial assets using AI-powered technical analysis. Available commands:\n\n/chart - Custom chart with indicators\n/crypto - Cryptocurrency markets\n/nasdaq - NASDAQ stocks\n/nyse - NYSE stocks\n/forex - Forex pairs\n/cfd - Commodities & CFDs\n/example - See example commands",
+    "example": "Example commands:\n/chart BINANCE:BTCUSDT 15m\n/chart NASDAQ:AAPL 1D\n/chart CAPITALCOM:GOLD 4h\n\nSupported intervals:\n1m, 3m, 5m, 15m, 30m, 45m, 1h, 2h, 3h, 4h, 1D, 1W, 1M"
+  }
+}
